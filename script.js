@@ -1,34 +1,23 @@
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
-const topButton = document.getElementById("topButton");
+const menuToggle=document.getElementById('menuToggle');
+const mainNav=document.getElementById('mainNav');
+const progress=document.getElementById('scrollProgress');
 
-menuToggle.addEventListener("click", () => {
-  const opened = mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", opened ? "true" : "false");
-});
+menuToggle.addEventListener('click',()=>mainNav.classList.toggle('open'));
+mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mainNav.classList.remove('open')));
 
-mainNav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  });
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+},{threshold:.12});
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-window.addEventListener("scroll", () => {
-  topButton.classList.toggle("show", window.scrollY > 500);
-});
-
-topButton.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const percent=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  progress.style.width=percent+'%';
 });

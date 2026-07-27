@@ -1,0 +1,24 @@
+PLB 홈페이지 V4 사용방법
+
+추가된 기능
+- HOME 화면 블로그 연결
+- 블로그 카드 3개
+- 네이버 클립, 카카오채널, 유튜브 연결 영역
+- 제조사 공식자료 연결
+- 대표 정보, 회사 주소, 이메일, 팩스
+- 드라마 오싹한 연애 협찬
+- 모바일 메뉴와 전화 버튼
+
+중요
+현재 아래 글자는 실제 주소를 넣기 위한 임시 자리입니다.
+- BLOG_URL → 연결 완료: https://blog.naver.com/plb6498
+- CLIP_URL
+- KAKAO_URL
+- YOUTUBE_URL
+
+실제 주소를 받으면 index.html에서 해당 글자를 실제 주소로 바꾸면 됩니다.
+
+GitHub 업로드
+1. 압축을 풉니다.
+2. GitHub plb-homepage 저장소에 index.html, style.css, script.js, assets 폴더를 올립니다.
+3. 기존 파일을 덮어씁니다.
