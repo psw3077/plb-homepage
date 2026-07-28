@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>PLB 관리자</title>
+  <style>
+    :root{--bg:#071827;--panel:#10283a;--line:#27445a;--text:#f6f8fb;--muted:#a9bac8;--accent:#f39c34}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans KR",sans-serif;background:linear-gradient(135deg,#071827,#0d2233);color:var(--text)}
+    .wrap{min-height:100vh;display:grid;grid-template-columns:260px 1fr}.side{padding:28px 20px;background:rgba(5,18,29,.96);border-right:1px solid var(--line)}
+    .brand{font-size:28px;font-weight:800}.brand small{display:block;font-size:13px;color:var(--muted);margin-top:4px}.nav{margin-top:36px;display:grid;gap:10px}.nav a{color:var(--text);text-decoration:none;padding:13px 14px;border-radius:10px;background:transparent}.nav a:hover,.nav a.active{background:var(--panel)}
+    main{padding:34px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:26px}.top h1{margin:0;font-size:28px}.top a{color:var(--text);text-decoration:none;border:1px solid var(--line);padding:10px 14px;border-radius:10px}
+    .notice{padding:16px 18px;border-left:4px solid var(--accent);background:#142d3e;border-radius:10px;margin-bottom:24px;color:#e8eef3}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}.card b{font-size:30px;display:block;margin-bottom:8px}.card span{color:var(--muted)}
+    .section{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}.section h2{margin-top:0}.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.action{padding:18px;border-radius:12px;background:#0b2131;border:1px solid var(--line)}.action h3{margin:0 0 7px}.action p{margin:0;color:var(--muted);line-height:1.55}
+    @media(max-width:900px){.wrap{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line)}.nav{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.actions{grid-template-columns:1fr}}
+    @media(max-width:520px){main{padding:22px 16px}.grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <aside class="side">
+    <div class="brand">PLB<small>피엘비 주식회사 관리자</small></div>
+    <nav class="nav">
+      <a class="active" href="#">대시보드</a>
+      <a href="#products">제품 관리</a>
+      <a href="#documents">자료실 관리</a>
+      <a href="#inquiries">문의 관리</a>
+      <a href="#channels">채널 관리</a>
+      <a href="/">홈페이지 보기</a>
+    </nav>
+  </aside>
+  <main>
+    <div class="top"><h1>관리자 대시보드</h1><a href="/">홈페이지로 이동</a></div>
+    <div class="notice">현재는 관리자 UI 준비 단계입니다. 다음 단계에서 Supabase 로그인, 제품 등록, 문의 조회 기능을 연결합니다.</div>
+    <section class="grid">
+      <div class="card"><b>0</b><span>등록 제품</span></div>
+      <div class="card"><b>0</b><span>제조사 자료</span></div>
+      <div class="card"><b>0</b><span>신규 문의</span></div>
+      <div class="card"><b>4</b><span>연결 채널</span></div>
+    </section>
+    <section class="section" id="products"><h2>빠른 관리</h2><div class="actions">
+      <div class="action"><h3>제품 등록</h3><p>제품명, 제조사, 용도, 포장 단위와 대표 이미지를 관리합니다.</p></div>
+      <div class="action"><h3>자료 업로드</h3><p>카탈로그, 기술자료, MSDS와 인증서를 분류해 등록합니다.</p></div>
+      <div class="action"><h3>문의 확인</h3><p>고객사명, 연락처, 제품명과 상담 내용을 확인합니다.</p></div>
+    </div></section>
+    <section class="section" id="documents"><h2>운영 준비 상태</h2><p>홈페이지와 분리된 PLB 전용 관리자 경로가 생성되었습니다. 실제 데이터 저장과 로그인은 Supabase 연결 후 활성화됩니다.</p></section>
+  </main>
+</div>
+</body>
+</html>
